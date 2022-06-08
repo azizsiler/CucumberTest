@@ -1,18 +1,13 @@
 package stepDefinitions;
 
-<<<<<<< HEAD
-public class Hooks {
-
-    // stepdefinitions package icerisinde @Bifore ve@After metho
-}
-=======
 import io.cucumber.java.Scenario;
 import org.junit.After;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import utilities.Driver;
-
 public class Hooks {
+
+    // stepdefinitions package icerisinde @Bifore ve@After metho
 
     @After
     public void tearDown(Scenario scenario){
@@ -40,4 +35,4 @@ scenario'lar için screenshoot olmasi amaciyla
 @After methodu kullanacağız//
 
  */
->>>>>>> fdaff37 (Initial commit)
+
