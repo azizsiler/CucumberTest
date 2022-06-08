@@ -37,7 +37,7 @@ Hooks class'ına koyarız
 
 Biz her scenario'dan sonra test sonucunu kontrol edip failed olan
 scenario'lar için screenshoot olmasi amaciyla
-@After methodu kullanacağız
+@After methodu kullanacağız//
 
  */
 >>>>>>> fdaff37 (Initial commit)
