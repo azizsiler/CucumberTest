@@ -1,5 +1,6 @@
 package stepDefinitions;
 
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import org.junit.Assert;
@@ -43,5 +44,39 @@ public class AmazonStepDefn {
         String arananKelime="java";
         String actualKelime=amazonPage.aramaSonucElementi.getText();
         Assert.assertTrue(actualKelime.contains(arananKelime));
+    }
+
+
+    @Given("sonuclarin {string} icerdigini test eder")
+    public void sonuclarin_icerdigini_test_eder(String istenenKelime) {
+        String arananKelime=istenenKelime;
+        String actualKelime=amazonPage.aramaSonucElementi.getText();
+        Assert.assertTrue(actualKelime.contains(arananKelime));
+
+    }
+
+    @And("kullanici {string}\" icin arama yapar")
+    public void kullaniciIcinAramaYapar(String istenenKelime){
+        amazonPage.aramaKutusu.sendKeys(istenenKelime+Keys.ENTER);
+    }
+
+    @Given("kullanici {string} anasayfasinda")
+    public void kullaniciAnasayfasinda(String istenenUrl) {
+        Driver.getDriver().get(ConfigReader.getProperty(istenenUrl));
+    }
+
+    @And("url'nin {string} icerdigini test eder")
+    public void urlNinIcerdiginiTestEder(String istenenKelime) {
+        String actualUrl=Driver.getDriver().getCurrentUrl();
+        Assert.assertTrue(actualUrl.contains(istenenKelime));
+    }
+
+    @Then("kullnici {int} saniye bekler")
+    public void kullniciSaniyeBekler(int istenenSaniye) {
+        try {
+            Thread.sleep(istenenSaniye*1000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
     }
 }
